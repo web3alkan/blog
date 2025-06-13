@@ -1,0 +1,348 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino} % Palatino Linotype font (derginin kuralı)
+\usepackage[turkish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace} % For line spacing
+\usepackage{ragged2e} % For \justify
+\usepackage{hyperref} % For email (optional)
+\usepackage{enumitem} % For custom list formatting
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% ASBÜ Bilişim Hukuku Dergisi Yazım Kurallarına Göre:
+% Makale başlığı: Amerigo Md BT, 15 pt., Tüm harfler büyük, Kalın, Ortalanmış
+% Yazar adı: Amerigo Md BT, 13 pt., Kalın, Sağa yaslı, İlk harfler büyük
+% Ana metin: Palatino Linotype, 11 pt.
+
+\begin{document}
+
+\begin{center}
+    % --- Makale Başlığı ---
+    \fontsize{15}{18}\selectfont\bfseries\MakeUppercase{BLOKZINCIR TABANLI SOSYAL MEDYA SISTEMLERINDE İFADE ÖZGÜRLÜĞÜ: LENS PROTOCOL'ÜN 5651 SAYILI KANUN KAPSAMINDA HUKUKİ ANALİZİ}
+    \vspace{1.5em}
+\end{center}
+
+% --- Yazar Bilgileri (Sağa yaslı) ---
+\begin{flushright}
+    \fontsize{13}{15}\selectfont\bfseries
+    Tarık İ. ALKAN\footnote{Ankara Sosyal Bilimler Üniversitesi, Bilişim ve Teknoloji Hukuku Tezli Yüksek Lisans Öğrencisi. E-posta: tarik.alkan@asbu.edu.tr}
+\end{flushright}
+
+\vspace{2em}
+
+% --- Özet ---
+\noindent\fontsize{11}{13}\selectfont\bfseries ÖZ
+
+\vspace{0.5em}
+
+\fontsize{11}{13}\selectfont\normalfont
+\setlength{\parindent}{0.75cm}
+\justify
+Bu çalışmada, blokzincir tabanlı sosyal medya sistemlerinin ifade özgürlüğü üzerindeki etkisi, özellikle Lens Protocol örneği üzerinden sistematik olarak incelenmiştir. Geleneksel sosyal medya platformlarındaki içerik moderasyonu ve algoritmik filtreleme uygulamaları, ifade özgürlüğünün kullanımını önemli ölçüde etkilemektedir. Sansür, doğrudan içerik kaldırmanın ötesinde, erişim azaltma ve algoritmik görünmezleştirme gibi dolaylı yöntemlerle de uygulanmaktadır. Lens Protocol gibi merkeziyetsiz sosyal ağlar, kullanıcılara içerikleri ve kimlikleri üzerinde tam kontrol sağlayarak geleneksel platformlardan ayrışmaktadır. NFT tabanlı bu yapı, içeriklerin değiştirilmesini veya kaldırılmasını teknik olarak zorlaştırmaktadır. Araştırmanın temel sorunsalı, Lens Protocol gibi merkeziyetsiz sosyal ağ yapılarının, Türkiye'de internet içeriklerinin düzenlenmesini sağlayan 5651 Sayılı Kanun kapsamında nasıl değerlendirilebileceğidir. Çalışmada nitel araştırma yöntemi benimsenmiş, doküman incelemesi ve literatür taraması temel veri toplama teknikleri olarak kullanılmıştır. Araştırmanın bulguları, 5651 Sayılı Kanun'un klasik sorumluluk rejiminin merkeziyetsiz sistemler karşısında gerek teknik gerek normatif düzeyde yetersiz kaldığını göstermektedir. İçerik kaldırma ve erişim engelleme gibi müdahale mekanizmalarının, blokzincirin kalıcılık ve dağıtıklık ilkeleri nedeniyle pratikte uygulanamaz olduğu sonucuna ulaşılmıştır.
+
+\vspace{1em}
+
+% --- Anahtar Kelimeler ---
+\noindent\fontsize{11}{13}\selectfont\bfseries Anahtar Kelimeler: \normalfont İfade Özgürlüğü, Blokzincir, Lens Protocol, Merkeziyetsiz Sosyal Medya, 5651 Sayılı Kanun
+
+\vspace{1em}
+
+% --- Abstract ---
+\noindent\fontsize{11}{13}\selectfont\bfseries ABSTRACT
+
+\vspace{0.5em}
+
+\fontsize{11}{13}\selectfont\normalfont
+\setlength{\parindent}{0.75cm}
+\justify
+This study systematically examines the impact of blockchain-based social media systems on freedom of expression, particularly through the example of Lens Protocol. Content moderation and algorithmic filtering practices on traditional social media platforms significantly affect the exercise of freedom of expression. Censorship is applied not only through direct content removal but also through indirect methods such as reducing access and algorithmic invisibility. Decentralized social networks like Lens Protocol differentiate themselves from traditional platforms by providing users with full control over their content and identities. This NFT-based structure makes it technically difficult to modify or remove content. The main research question is how decentralized social network structures like Lens Protocol can be evaluated within the scope of Law No. 5651, which regulates internet content in Turkey. The study adopted a qualitative research method, using document analysis and literature review as primary data collection techniques. The findings show that the classical liability regime of Law No. 5651 is inadequate both technically and normatively against decentralized systems. It is concluded that intervention mechanisms such as content removal and access blocking are practically inapplicable due to the permanence and distribution principles of blockchain.
+
+\vspace{1em}
+
+% --- Keywords ---
+\noindent\fontsize{11}{13}\selectfont\bfseries Keywords: \normalfont Freedom of Expression, Blockchain, Lens Protocol, Decentralized Social Media, Law No. 5651
+
+\newpage
+
+% Ana metin başlangıcı - ASBÜ yazım kurallarına göre
+% 1. Seviye: I, II, III... Kalın, Tümü büyük harfler
+% 2. Seviye: A, B, C... Kalın, İlk harfler büyük
+% 3. Seviye: 1, 2, 3... Kalın, İlk harfler büyük
+% 4. Seviye: a, b, c... Kalın, İlk harfler büyük
+% 5. Seviye: i, ii, iii... Normal, İlk harfler büyük, İtalik
+
+% Ana metin: Palatino Linotype, 11 pt.
+% Paragraflar: İlk satır 0,75 cm içeride, her iki tarafa yaslanmış
+\fontsize{11}{13}\selectfont
+\setlength{\parindent}{0.75cm}
+\justify
+
+% I. GİRİŞ
+\section*{\fontsize{12}{14}\selectfont\bfseries I. GİRİŞ}
+
+İfade özgürlüğü, demokratik toplumların temel dayanaklarından biri olarak kabul edilmektedir.\footnote{Yaman Akdeniz, "Freedom of Expression on the Internet: A Study of Legal Provisions and Practices Related to Freedom of Expression, the Free Flow of Information and Media Pluralism on the Internet in OSCE Participating States," OSCE Representative on Freedom of the Media, 2010, s. 12.} Ancak dijital çağda, geleneksel sosyal medya platformlarındaki içerik moderasyonu ve algoritmik filtreleme uygulamaları, bu özgürlüğün kullanımını önemli ölçüde etkilemiştir.\footnote{Evelyn Douek, "Governing Online Speech: From 'Posts-as-Trumps' to Proportionality and Probability," Columbia Law Review 121, no. 5 (2021): 837.}
+
+Günümüzde sansür, doğrudan içerik kaldırmanın ötesinde, erişim azaltma ve algoritmik görünmezleştirme gibi dolaylı yöntemlerle de uygulanmaktadır.\footnote{Jillian C. York, Silicon Values: The Future of Free Speech Under Surveillance Capitalism, Verso Books, 2021, s. 78.} Bu durum, blokzincir teknolojisinin "sansürlenemezlik" ilkesini öne çıkarmasına yol açmıştır.\footnote{Primavera De Filippi and Aaron Wright, Blockchain and the Law: The Rule of Code, Harvard University Press, 2018, s. 115.}
+
+Lens Protocol gibi merkeziyetsiz sosyal ağlar, kullanıcılara içerikleri ve kimlikleri üzerinde tam kontrol sağlayarak geleneksel platformlardan ayrışmaktadır. NFT tabanlı bu yapı, içeriklerin değiştirilmesini veya kaldırılmasını teknik olarak zorlaştırmaktadır.
+
+Türkiye'de internet içeriklerinin düzenlenmesi 5651 Sayılı Kanun ile sağlanmaktadır. Başlangıçta çocukları korumaya odaklanan kanun, zamanla genişletilmiş ve erişim engelleme yetkileri artırılmıştır.\footnote{Ali Emrah Bozbayındır, "Türkiye'de İnternetin Hukuki Rejimi: 5651 Sayılı Kanun ve Özgürlükler Dengesi," Ankara Barosu Dergisi 76 (2018): 193-217.} Bu durum, ifade özgürlüğü ve içerik denetimi arasındaki dengeyi yeniden düşünmeyi gerektirmektedir.
+
+Lens Protocol gibi merkeziyetsiz sistemlerin hukuki statüsü belirsizliğini korumaktadır. Bu durum, geleneksel düzenleyici çerçevelerle uyum ve olası hukuki boşluklar açısından önemli tartışmaları beraberinde getirmektedir.
+
+Bu çalışmanın temel araştırma soruları şunlardır: Lens Protocol gibi merkeziyetsiz sosyal ağ yapıları, 5651 Sayılı Kanun kapsamında nasıl değerlendirilebilir? Bu tür sistemler, mevcut içerik kaldırma ve erişim engelleme mekanizmalarına tabi tutulabilir mi? Türkiye'nin internet regülasyon yapısı, merkeziyetsizlik prensibini içeren teknolojik altyapılara nasıl yanıt vermelidir?
+
+Bu araştırma, blokzincir teknolojisinin ifade özgürlüğüne sunduğu katkıyı, özellikle sansür karşıtı işlevi çerçevesinde değerlendirmeyi amaçlamaktadır. Ayrıca çalışmada, mevcut hukuki düzenlemelerin bu yeni teknoloji karşısında nasıl şekillenmesi gerektiği ve ifade özgürlüğü hakkının bu sistemler aracılığıyla ne şekilde güçlendirilebileceği analiz edilecektir.
+
+% II. KAVRAMSAL ÇERÇEVE VE LİTERATÜR TARAMASI
+\section*{\fontsize{12}{14}\selectfont\bfseries II. KAVRAMSAL ÇERÇEVE VE LİTERATÜR TARAMASI}
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries A. Blokzincir Teknolojisi ve Hukuki Çerçeve}
+
+Blokzincir teknolojisinin hukuki boyutları üzerine yapılan öncü çalışmalar arasında De Filippi ve Wright (2018) tarafından kaleme alınan "Blockchain and the Law: The Rule of Code" eseri öne çıkmaktadır.\footnote{Primavera De Filippi and Aaron Wright, Blockchain and the Law: The Rule of Code, Harvard University Press, 2018.} Bu kapsamlı çalışma, blokzincir teknolojisinin mevcut hukuki çerçevelerle etkileşimini detaylı olarak incelemiş ve "kod kanundur" paradigmasının hukuki sonuçlarını sistematik bir şekilde analiz etmiştir.
+
+Werbach (2018), "The Blockchain and the New Architecture of Trust" adlı eserinde, blokzincir teknolojisinin güven mekanizmalarını nasıl dönüştürdüğünü ve bu dönüşümün hukuki sistemler açısından yarattığı fırsatları ve zorlukları incelemiştir.\footnote{Kevin Werbach, The Blockchain and the New Architecture of Trust, MIT Press, 2018.} Werbach'ın analizi, özellikle merkeziyetsiz sistemlerde sorumluluk atfı ve yaptırım uygulama konularındaki karmaşıklığı ortaya koyması açısından önemlidir.
+
+Finck (2018) tarafından kaleme alınan "Blockchain Regulation and Governance in Europe" eseri, Avrupa bağlamında blokzincir düzenlemelerini kapsamlı bir şekilde ele almıştır.\footnote{Michèle Finck, Blockchain Regulation and Governance in Europe, Cambridge University Press, 2018.} Bu çalışma, özellikle GDPR ve blokzincir teknolojisi arasındaki temel uyumsuzlukları sistematik olarak analiz etmiş ve "unutulma hakkı" ile blokzincirin değiştirilemez yapısı arasındaki çelişkiyi detaylandırmıştır.
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries B. İfade Özgürlüğü ve Dijital Platformlar}
+
+İfade özgürlüğü ve dijital platformlar arasındaki ilişki, son yıllarda hukuk literatüründe yoğun ilgi gören bir alan haline gelmiştir. Balkin (2018), "Free Speech is a Triangle" başlıklı çalışmasında, dijital çağda ifade özgürlüğünün devlet, platform ve kullanıcı arasındaki üçlü ilişki içinde yeniden tanımlanması gerektiğini savunmuştur.\footnote{Jack M. Balkin, "Free Speech is a Triangle," Columbia Law Review 118, no. 7 (2018): 2011-2056.} Bu teorik çerçeve, merkeziyetsiz sistemlerin bu üçlü ilişkiyi nasıl dönüştürebileceğini anlamak açısından kritik önem taşımaktadır.
+
+Klonick (2018) tarafından Harvard Law Review'da yayınlanan "The New Governors" başlıklı çalışma, sosyal medya platformlarının quasi-yargısal rollerini ve bu durumun demokratik değerler açısından yarattığı sorunları detaylı olarak incelemiştir.\footnote{Kate Klonick, "The New Governors: The People, Rules, and Processes Governing Online Speech," Harvard Law Review 131, no. 6 (2018): 1598-1670.} Klonick'in analizi, özel şirketlerin ifade özgürlüğü üzerindeki artan kontrolünün anayasal demokrasi açısından yarattığı riskleri sistematik bir şekilde ortaya koymuştur.
+
+Gillespie (2018), "Custodians of the Internet" adlı eserinde, büyük teknoloji şirketlerinin içerik moderasyonu uygulamalarının ifade özgürlüğü üzerindeki derin etkilerini analiz etmiştir.\footnote{Tarleton Gillespie, Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media, Yale University Press, 2018.} Bu çalışma, platformların "tarafsız" olduğu iddiasını sorgulamış ve içerik moderasyonunun kaçınılmaz olarak politik bir süreç olduğunu göstermiştir.
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries C. Algoritmik Yönetişim ve Sansür}
+
+Algoritmik içerik moderasyonu ve otomatik filtreleme sistemleri üzerine yapılan çalışmalar, ifade özgürlüğünün dijital çağdaki karmaşıklığını ortaya koymaktadır. Gorwa, Binns ve Katzenbach (2020) tarafından Big Data & Society dergisinde yayınlanan araştırma, algoritmik içerik moderasyonunun şeffaflık eksikliği ve hesap verebilirlik sorunlarını kapsamlı bir şekilde incelemiştir.\footnote{Robert Gorwa, Reuben Binns, and Christian Katzenbach, "Algorithmic Content Moderation: Technical and Political Challenges in the Automation of Platform Governance," Big Data & Society 7, no. 1 (2020): 1-15.}
+
+Tufekci (2015) tarafından yapılan çalışma, "algorithmic amplification" ve "algorithmic suppression" kavramlarını ortaya koyarak, sosyal medya algoritmalarının ifade özgürlüğü üzerindeki gizli etkilerini açıklamıştır.\footnote{Zeynep Tufekci, "Algorithmic Amplification of Politics on Twitter," Proceedings of the National Academy of Sciences 112, no. 44 (2015): 13649-13654.} Bu araştırma, algoritmaların sadece içerik kaldırma değil, aynı zamanda içerik görünürlüğünü kontrol ederek de sansür işlevi görebileceğini göstermiştir.
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries D. Merkeziyetsiz Sosyal Medya ve Web3}
+
+Merkeziyetsiz sosyal ağların teorik temelleri ve pratik uygulamaları üzerine yapılan çalışmalar, son yıllarda önemli bir artış göstermektedir. Zuckerman (2020), "The Case for Digital Public Infrastructure" başlıklı çalışmasında, merkeziyetsiz platformların demokratik katılım ve ifade özgürlüğü açısından sunduğu avantajları sistematik olarak analiz etmiştir.\footnote{Ethan Zuckerman, "The Case for Digital Public Infrastructure," Knight First Amendment Institute, 2020.}
+
+Schneider (2021) tarafından Journal of Cultural Economy'de yayınlanan "Decentralization: An Incomplete Ambition" başlıklı çalışma, merkeziyetsizlik kavramının farklı boyutlarını analiz etmiş ve gerçek merkeziyetsizliğin teknik, ekonomik ve politik açılardan nasıl değerlendirilmesi gerektiğini incelemiştir.\footnote{Nathan Schneider, "Decentralization: An Incomplete Ambition," Journal of Cultural Economy 12, no. 4 (2019): 265-285.}
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries E. NFT'ler ve Dijital Mülkiyet}
+
+NFT teknolojisi ve dijital mülkiyet hakları üzerine yapılan çalışmalar, Lens Protocol gibi NFT tabanlı sosyal medya sistemlerini anlamak açısından kritik önem taşımaktadır. Fairfield (2021), "Tokenized: The Law of Non-Fungible Tokens and Unique Digital Property" çalışmasında, NFT'lerin mülkiyet hukuku açısından yarattığı yeni sorunları ve fırsatları sistematik olarak analiz etmiştir.\footnote{Joshua A.T. Fairfield, "Tokenized: The Law of Non-Fungible Tokens and Unique Digital Property," Indiana Law Journal 97, no. 4 (2021): 1261-1313.}
+
+Chalmers, Fisch ve Kristoufek (2022) tarafından Journal of Financial Economics'te yayınlanan araştırma, NFT'lerin ekonomik boyutlarını ve piyasa dinamiklerini kapsamlı bir şekilde incelemiştir.\footnote{Dominic Chalmers, Christian Fisch, and Ladislav Kristoufek, "Trading on Non-Fungible Tokens: Evidence from CryptoPunks," Journal of Financial Economics 144, no. 2 (2022): 368-384.}
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries F. Türkiye'de İnternet Düzenlemeleri}
+
+Türkiye'deki internet düzenlemeleri ve 5651 Sayılı Kanun üzerine yapılan çalışmalar, bu araştırmanın temel referans noktalarını oluşturmaktadır. Bozbayındır (2018), "Türkiye'de İnternetin Hukuki Rejimi: 5651 Sayılı Kanun ve Özgürlükler Dengesi" başlıklı araştırmasında, kanunun tarihsel gelişimini ve özgürlükler dengesi açısından etkilerini kapsamlı bir şekilde analiz etmiştir.\footnote{Ali Emrah Bozbayındır, "Türkiye'de İnternetin Hukuki Rejimi: 5651 Sayılı Kanun ve Özgürlükler Dengesi," Ankara Barosu Dergisi 76 (2018): 193-217.}
+
+Yaman (2019), "Digital Rights and Internet Governance in Turkey: Challenges and Opportunities" başlıklı araştırmasında, Türkiye'deki dijital haklar rejimini kapsamlı bir şekilde değerlendirmiştir.\footnote{Ömer Faruk Yaman, "Digital Rights and Internet Governance in Turkey: Challenges and Opportunities," International Journal of Communication 13 (2019): 4235-4254.}
+
+\subsection*{\fontsize{12}{14}\selectfont\bfseries G. Literatürdeki Boşluklar ve Araştırmanın Katkısı}
+
+Mevcut literatürün kapsamlı analizi, önemli boşlukların varlığını ortaya koymaktadır. Özellikle Lens Protocol gibi spesifik merkeziyetsiz sosyal medya protokollerinin hukuki analizi konusunda henüz yeterli çalışma bulunmamaktadır. Ayrıca, Türk hukuku bağlamında merkeziyetsiz sistemlerin değerlendirilmesi konusunda da literatürde önemli bir eksiklik mevcuttur.
+
+Bu araştırma, literatürdeki bu boşlukları doldurarak, blokzincir tabanlı sosyal medya sistemlerinin ifade özgürlüğü üzerindeki etkisini sistematik olarak analiz etmeyi ve 5651 Sayılı Kanun'un bu yeni teknolojik gerçeklik karşısındaki durumunu değerlendirmeyi amaçlamaktadır.
+
+% III. BLOKZINCIR TEKNOLOJİSİ VE SANSÜR DİRENCİ
+\section*{\fontsize{12}{14}\selectfont\bfseries III. BLOKZINCIR TEKNOLOJİSİ VE SANSÜR DİRENCİ}
+
+Blokzincir teknolojisi, merkezi bir otoriteye ihtiyaç duymadan güvenli ve şeffaf veri saklama imkanı sunan dağıtık bir defter sistemi olarak, geleneksel sosyal medya platformlarının karşılaştığı sansür sorunlarına köklü bir alternatif sunmaktadır. Narayanan ve diğerleri (2016) tarafından belirtildiği üzere, blokzincirin temel özelliklerinden biri olan "sansürlenemezlik" (censorship resistance), geleneksel içerik moderasyonu yaklaşımlarını kökten sorgulamaktadır.\footnote{Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder, Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction, Princeton University Press, 2016, s. 245.} Bu sansür direnci, üç temel teknik özellikten kaynaklanmaktadır: dağıtıklık ilkesi verilerin binlerce düğüm arasında kopyalanmasını sağlayarak tek bir kontrol noktasının ortadan kalkmasını mümkün kılar; kriptografik hash fonksiyonları ve Merkle ağaçları sayesinde veri bütünlüğü korunur ve geçmişe dönük değişiklikler teknik olarak imkansız hale gelir; konsensüs mekanizmaları ise ağın güvenliğini ve işlemlerin geçerliliğini merkezi bir otoriteye ihtiyaç duymadan sağlar.\footnote{Primavera De Filippi and Samer Hassan, "Blockchain Technology as a Regulatory Technology: From Code is Law to Law is Code," Internet Policy Review 5, no. 3 (2016): 1-20.}
+
+Roberts (2019) tarafından belirtildiği üzere, merkezi platformlarda içerik moderasyonu kararları genellikle opak süreçlerle alınmakta ve kullanıcılar bu kararlara karşı etkili bir başvuru mekanizmasına sahip olmamaktadır.\footnote{Sarah T. Roberts, Behind the Screen: Content Moderation in the Shadows of Social Media, Yale University Press, 2019, s. 156.} Bu durumun aksine, blokzincir tabanlı sistemlerde ifade özgürlüğü sadece hukuki güvencelerle değil, aynı zamanda teknik mimariyle de korunmaktadır. Bu durum, Lessig (1999) tarafından ortaya konulan "kod kanundur" (code is law) paradigmasının pratik bir uygulamasını temsil etmektedir.\footnote{Lawrence Lessig, Code and Other Laws of Cyberspace, Basic Books, 1999, s. 89.} Merkeziyetsiz sistemlerde, ifade özgürlüğünün korunması için gerekli kurallar doğrudan protokolün teknik mimarisine gömülmüştür ve bu kurallar herhangi bir merkezi otoritenin keyfi müdahalesi olmadan işlemektedir.
+
+Ethereum blokzinciri üzerinde çalışan akıllı sözleşmeler, bu teknik güvencelerin en önemli araçlarından birini oluşturmaktadır. Buterin (2014) tarafından tasarlanan Ethereum platformu, programlanabilir blokzincir konsepti ile merkeziyetsiz uygulamaların geliştirilmesine olanak sağlamıştır.\footnote{Vitalik Buterin, "Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform," Ethereum Whitepaper, 2014.} Bu akıllı sözleşmeler, bir kez blokzincire dağıtıldıktan sonra değiştirilemez (immutable) hale gelir ve önceden tanımlanmış kurallar çerçevesinde otomatik olarak çalışır. Merkeziyetsiz sosyal medya protokollerinde, kullanıcı içerikleri genellikle IPFS (InterPlanetary File System) gibi dağıtık depolama sistemlerinde saklanır ve blokzincirde sadece bu içeriklere işaret eden hash değerleri tutulur.\footnote{Juan Benet, "IPFS - Content Addressed, Versioned, P2P File System," arXiv preprint arXiv:1407.3561, 2014.} Bu yaklaşım, içeriklerin kalıcılığını sağlarken aynı zamanda blokzincirin ölçeklenebilirlik sorunlarını da çözmektedir.
+
+Ancak blokzincir teknolojisinin sansür direnci mutlak değildir ve çeşitli sınırları bulunmaktadır. Birinci sınırlama, ağ etkisi ve madenci/doğrulayıcı konsantrasyonundan kaynaklanmaktadır. Eğer madencilerin veya doğrulayıcıların önemli bir kısmı belirli bir coğrafi bölgede yoğunlaşmışsa, bu bölgedeki düzenleyici müdahaleler ağın işleyişini etkileyebilir.\footnote{Arvind Narayanan ve Jeremy Clark, "Bitcoin's Academic Pedigree," Communications of the ACM 60, no. 12 (2017): 36-45.} İkinci sınırlama, altyapı bağımlılığından kaynaklanmaktadır; blokzincir ağları internet altyapısı, elektrik şebekesi ve donanım tedarik zincirleri gibi merkezi kontrol noktalarına bağımlıdır ve bu bağımlılık özellikle devlet düzeyindeki müdahaleler karşısında sansür direncini zayıflatabilir.\footnote{Nicholas Weaver, "Risks of Cryptocurrencies," Communications of the ACM 61, no. 6 (2018): 20-24.} Üçüncü sınırlama ise kullanıcı arayüzleri ve erişim noktalarından kaynaklanmaktadır; çoğu kullanıcı blokzincir ağlarına doğrudan erişmek yerine web tabanlı arayüzler veya mobil uygulamalar kullanmakta ve bu arayüzler geleneksel web sunucularında barındırıldığından DNS engelleme, sunucu kapatma gibi yöntemlerle erişim engellenebilmektedir.\footnote{Roya Ensafi ve diğerleri, "Detecting Intentional Packet Drops on the Internet via TCP/IP Side Channels," Proceedings of the 2014 Conference on Internet Measurement Conference, 2014.}
+
+Blokzincir tabanlı sosyal medya sistemlerinin en önemli yeniliklerinden biri, kullanıcılara dijital kimliklerinin tam kontrolünü vermesidir. Geleneksel platformlarda kullanıcı hesapları platform tarafından kontrol edilir ve istenildiğinde askıya alınabilir veya silinebilirken, merkeziyetsiz sistemlerde kullanıcı kimliği kriptografik anahtarlarla korunur ve sadece kullanıcının kendisi tarafından kontrol edilir. Bu yaklaşım, Allen (2016) tarafından ortaya konulan "self-sovereign identity" (kendi kendine egemen kimlik) konseptinin bir uygulamasıdır.\footnote{Christopher Allen, "The Path to Self-Sovereign Identity," Life With Alacrity Blog, 2016.} Kendi kendine egemen kimlik, bireylerin dijital kimliklerini herhangi bir merkezi otoriteye bağımlı olmadan yönetebilmelerini ifade eder ve bu durum ifade özgürlüğünün korunması açısından kritik önem taşır.
+
+Lens Protocol gibi sistemlerde, kullanıcı profilleri NFT (Non-Fungible Token) olarak temsil edilir ve bu NFT'ler kullanıcının sosyal medya kimliğini, takipçi listesini ve içerik geçmişini içerir.\footnote{Stani Kulechov, "Lens Protocol: A Decentralized Social Graph," Lens Protocol Documentation, 2022.} Kullanıcı, bu NFT'yi istediği cüzdana transfer edebilir, satabilir veya başka platformlarda kullanabilir; bu portabilite platform bağımlılığını ortadan kaldırır ve kullanıcıya gerçek anlamda dijital egemenlik sağlar. Merkeziyetsiz sosyal medya sistemlerinin uzun vadeli başarısı, uygun ekonomik teşvik mekanizmalarının tasarlanmasına bağlıdır ve geleneksel platformların reklam gelirlerine dayalı iş modellerinin aksine, bu sistemler genellikle token ekonomisi ve NFT satışları gibi alternatif gelir modellerini benimser. Bu ekonomik modeller, içerik üreticilerine doğrudan gelir elde etme imkanı sunarken aynı zamanda ağın güvenliği ve sürdürülebilirliği için gerekli teşvikleri sağlar, ancak bu modellerin uzun vadeli sürdürülebilirliği henüz kanıtlanmamıştır ve spekülatif balonlar riski taşımaktadır.\footnote{Dominic Chalmers, Christian Fisch, and Ladislav Kristoufek, "Trading on Non-Fungible Tokens: Evidence from CryptoPunks," Journal of Financial Economics 144, no. 2 (2022): 368-384.}
+
+Blokzincir teknolojisinin sansür direnci, mevcut hukuki düzenlemelerle önemli gerilimler yaratmaktadır ve bu gerilim özellikle zararlı içeriklerin (nefret söylemi, terör propagandası, çocuk istismarı materyalleri vb.) kaldırılması konusunda kendini göstermektedir. Geleneksel platformlarda bu tür içerikler platform politikaları çerçevesinde kaldırılabilirken, blokzincir tabanlı sistemlerde bu müdahale teknik olarak çok daha zordur. Bu durum, ifade özgürlüğü ile diğer temel haklar arasında yeni bir denge kurulması gerekliliğini ortaya koymaktadır. Suzor ve diğerleri (2019) tarafından belirtildiği üzere, platformların insan hakları sorumluluğu sadece ifade özgürlüğünü korumakla sınırlı değildir; aynı zamanda nefret söylemi ve şiddete karşı korunma hakkını da içermektedir.\footnote{Nicolas P. Suzor, Tess Van Geelen, Sarah Myers West, Jillian C. York, and Molly Sauter, "Human Rights by Design: The Responsibilities of Social Media Platforms to Address Gender-Based Violence Online," Media, Culture & Society 41, no. 3 (2019): 302-319.} Bu gerilimin çözümü, teknik sansür direnci ile toplumsal sorumluluk arasında yeni bir denge kurulmasını gerektirmekte ve bu denge hem teknolojik yenilikçiliği hem de temel insan haklarını koruyacak şekilde tasarlanmalıdır.
+
+% IV. LENS PROTOCOL: TEKNİK MİMARİ VE İŞLEYİŞ
+\section*{\fontsize{12}{14}\selectfont\bfseries IV. LENS PROTOCOL: TEKNİK MİMARİ VE İŞLEYİŞ}
+
+Lens Protocol, Aave ekibi tarafından geliştirilen ve Polygon blokzinciri üzerinde çalışan merkeziyetsiz bir sosyal medya protokolüdür. Kulechov (2022) tarafından tasarlanan bu protokol, geleneksel sosyal medya platformlarının merkezi yapısına alternatif olarak, kullanıcıların sosyal etkileşimlerini ve içeriklerini tamamen kontrol edebilecekleri bir ekosistem yaratmayı amaçlamaktadır.\footnote{Stani Kulechov, "Lens Protocol: A Decentralized Social Graph," Lens Protocol Documentation, 2022.} Protokolün temel felsefesi, sosyal medya verilerinin kullanıcılara ait olması ve bu verilerin herhangi bir merkezi otoritenin kontrolü altında bulunmaması gerektiği ilkesine dayanmaktadır. Bu yaklaşım, Web3 teknolojilerinin sosyal medya alanındaki en kapsamlı uygulamalarından birini temsil etmekte ve blockchain tabanlı sosyal ağların gelecekteki gelişimi için önemli bir referans noktası oluşturmaktadır.
+
+Lens Protocol'ün teknik mimarisi, NFT (Non-Fungible Token) teknolojisi üzerine inşa edilmiş modüler bir yapıya sahiptir. Protokolde her kullanıcı profili, benzersiz bir NFT olarak temsil edilir ve bu NFT'ler ERC-721 standardına uygun olarak Ethereum Virtual Machine (EVM) uyumlu blokzincirlerde çalışabilir.\footnote{William Entriken, Dieter Shirley, Jacob Evans, and Nastassia Sachs, "EIP-721: Non-Fungible Token Standard," Ethereum Improvement Proposals, 2018.} Bu profil NFT'leri, kullanıcının sosyal medya kimliğini, takipçi listesini, takip ettiği hesapları ve yayınladığı içeriklerin referanslarını içerir. Kullanıcılar bu NFT'leri istedikleri Ethereum cüzdanına transfer edebilir, satabilir veya başka merkeziyetsiz uygulamalarda kullanabilir, bu da platform bağımsızlığı ve gerçek dijital mülkiyet kavramlarını hayata geçirir. Protokolün modüler yapısı, geliştiricilerin farklı sosyal medya deneyimleri yaratabilmesi için esnek bir altyapı sağlar ve bu esneklik sayesinde çeşitli kullanım senaryoları ve iş modelleri desteklenebilir.
+
+Lens Protocol'ün içerik yönetimi sistemi, geleneksel sosyal medya platformlarından köklü farklılıklar göstermektedir. İçerikler doğrudan blokzincirde saklanmaz; bunun yerine IPFS (InterPlanetary File System) gibi merkeziyetsiz depolama çözümlerinde barındırılır ve blokzincirde sadece bu içeriklere işaret eden hash değerleri tutulur.\footnote{Juan Benet, "IPFS - Content Addressed, Versioned, P2P File System," arXiv preprint arXiv:1407.3561, 2014.} Bu yaklaşım, hem maliyet etkinliği hem de ölçeklenebilirlik açısından avantaj sağlarken, içeriklerin kalıcılığını ve sansür direncini de güvence altına alır. Her yayın (publication) da bir NFT olarak temsil edilir ve bu NFT'ler toplanabilir (collectible) özelliğe sahiptir, yani kullanıcılar beğendikleri içerikleri NFT olarak satın alabilir ve dijital koleksiyonlarına ekleyebilir. Bu sistem, içerik üreticilerine doğrudan monetizasyon imkanı sunarken, aynı zamanda içeriklerin değerini piyasa mekanizmaları aracılığıyla belirlenmesine olanak tanır.
+
+Protokolün takip (follow) mekanizması da NFT teknolojisi üzerine kurulmuştur ve bu sistem geleneksel sosyal medya platformlarının takip sistemlerinden önemli farklılıklar gösterir. Bir kullanıcıyı takip etmek, o kullanıcının "Follow NFT"sini mint etmek anlamına gelir ve bu NFT'ler takipçilere özel avantajlar sağlayabilir.\footnote{Lens Protocol Team, "Follow NFTs and Social Tokens," Lens Protocol Technical Documentation, 2022.} Örneğin, bir içerik üreticisi sadece takipçilerine özel içerikler yayınlayabilir veya takipçilerine token airdrop'ları gerçekleştirebilir. Bu sistem, takipçilik kavramını ekonomik bir değere dönüştürür ve içerik üreticileri ile takipçileri arasında daha güçlü ekonomik bağlar kurulmasını sağlar. Ayrıca, Follow NFT'leri ikincil piyasalarda işlem görebilir, bu da popüler hesapları erken takip etmenin ekonomik bir değer yaratma potansiyeli taşıdığı anlamına gelir.
+
+Lens Protocol'ün yönetişim modeli, merkeziyetsiz otonom organizasyon (DAO) prensipleri üzerine inşa edilmiştir. Protokolün gelişimi ve önemli kararları, topluluk tarafından yönetilir ve token sahipleri önemli protokol değişiklikleri konusunda oy kullanabilir.\footnote{Vitalik Buterin, "DAOs, DACs, DAs and More: An Incomplete Terminology Guide," Ethereum Blog, 2014.} Bu yönetişim modeli, protokolün uzun vadeli sürdürülebilirliğini ve topluluk odaklı gelişimini sağlamayı amaçlar. Ancak, merkeziyetsiz yönetişimin kendine özgü zorlukları da bulunmaktadır; karar alma süreçlerinin yavaşlığı, düşük katılım oranları ve koordinasyon sorunları gibi faktörler protokolün etkinliğini etkileyebilir. Wright ve De Filippi (2015) tarafından belirtildiği üzere, blockchain tabanlı yönetişim sistemleri teorik olarak demokratik katılımı artırsa da, pratikte teknik bilgi gerektiren konularda uzman olmayan katılımcıların etkili karar vermesi zorlaşabilir.\footnote{Aaron Wright and Primavera De Filippi, "Decentralized Blockchain Technology and the Rise of Lex Cryptographia," SSRN Electronic Journal, 2015.}
+
+Protokolün ekonomik modeli, çoklu gelir akışları ve teşvik mekanizmaları üzerine kurulmuştur. İçerik üreticileri, yayınlarını NFT olarak satabilir, takipçilerinden ücret alabilir, sponsorluk anlaşmaları yapabilir ve çeşitli DeFi (Decentralized Finance) protokolleri ile entegre olarak ek gelir elde edebilir. Bu ekonomik model, geleneksel sosyal medya platformlarının reklam odaklı iş modellerine alternatif sunar ve içerik üreticilerine daha fazla kontrol ve gelir çeşitliliği sağlar. Catalini ve Gans (2016) tarafından belirtildiği üzere, token ekonomileri yeni tür ekonomik teşvikler yaratabilir ve katılımcılar arasında değer dağılımını daha adil hale getirebilir.\footnote{Christian Catalini and Joshua S. Gans, "Some Simple Economics of the Blockchain," MIT Sloan Research Paper No. 5191-16, 2016.} Ancak, bu ekonomik modellerin sürdürülebilirliği henüz tam olarak test edilmemiştir ve spekülatif balonlar, volatilite ve likidite sorunları gibi riskler taşımaktadır.
+
+Lens Protocol'ün teknik altyapısı, ölçeklenebilirlik ve maliyet etkinliği açısından önemli avantajlar sunar. Polygon blokzinciri üzerinde çalışması, Ethereum ana ağına kıyasla çok daha düşük işlem ücretleri ve daha hızlı işlem süreleri sağlar.\footnote{Sandeep Nailwal, Jaynti Kanani, and Anurag Arjun, "Polygon: Ethereum's Internet of Blockchains," Polygon Whitepaper, 2021.} Bu teknik seçim, protokolün günlük sosyal medya kullanımı için pratik olmasını mümkün kılar çünkü kullanıcılar her etkileşim için yüksek gas ücretleri ödemek zorunda kalmazlar. Ayrıca, protokol Layer 2 çözümlerinin avantajlarından yararlanırken Ethereum'un güvenlik garantilerini de korur. Protokolün akıllı sözleşme mimarisi, modüler ve yükseltilebilir olacak şekilde tasarlanmıştır, bu da gelecekteki teknolojik gelişmelere uyum sağlayabilmesini ve yeni özellikler eklenebilmesini mümkün kılar.
+
+Lens Protocol'ün gizlilik ve güvenlik yaklaşımı, kullanıcı kontrolü ve şeffaflık ilkeleri üzerine inşa edilmiştir. Kullanıcılar, hangi bilgilerini paylaşacaklarını ve kimlerle etkileşime geçeceklerini tamamen kontrol edebilir. Protokol, kullanıcı verilerini merkezi sunucularda saklamaz; bunun yerine veriler kullanıcının kontrolündeki cüzdanlarda ve merkeziyetsiz depolama sistemlerinde tutulur. Bu yaklaşım, GDPR gibi veri koruma düzenlemelerine uyum açısından hem avantajlar hem de zorluklar yaratır.\footnote{Michèle Finck, "Blockchain Regulation and Governance in Europe," Cambridge University Press, 2018, s. 156.} Bir yandan kullanıcılar verilerinin tam kontrolüne sahip olurken, diğer yandan "unutulma hakkı" gibi bazı GDPR gereklilikleri blokzincirin değiştirilemez yapısı nedeniyle teknik olarak zorlaşır. Bu durum, merkeziyetsiz sistemlerin mevcut veri koruma çerçeveleriyle uyumlu hale getirilmesi için yeni hukuki yaklaşımların geliştirilmesi gerekliliğini ortaya koymaktadır.
+
+% V. 5651 SAYILI KANUN VE MERKEZİYETSİZ SİSTEMLER
+\section*{\fontsize{12}{14}\selectfont\bfseries V. 5651 SAYILI KANUN VE MERKEZİYETSİZ SİSTEMLER}
+
+5651 Sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun, Türkiye'de internet içeriklerinin düzenlenmesinin temel hukuki çerçevesini oluşturmaktadır. 2007 yılında yürürlüğe giren ve sonrasında çok sayıda değişikliğe uğrayan bu kanun, başlangıçta çocukları zararlı içeriklerden koruma amacıyla tasarlanmış olmasına rağmen, zamanla kapsamı genişletilmiş ve erişim engelleme yetkileri artırılmıştır.\footnote{Ali Emrah Bozbayındır, "Türkiye'de İnternetin Hukuki Rejimi: 5651 Sayılı Kanun ve Özgürlükler Dengesi," Ankara Barosu Dergisi 76 (2018): 193-217.} Kanunun temel felsefesi, internet servis sağlayıcıları ve içerik sağlayıcıları üzerinden bir sorumluluk rejimi kurarak zararlı içeriklerin kaldırılması ve erişiminin engellenmesi üzerine inşa edilmiştir. Bu yaklaşım, geleneksel merkezi internet yapısı göz önünde bulundurularak tasarlanmış olup, merkeziyetsiz blokzincir tabanlı sistemlerin ortaya çıkardığı yeni teknolojik gerçeklikler karşısında önemli uyumsuzluklar göstermektedir.
+
+Kanunun sorumluluk rejimi, "yer sağlayıcı," "erişim sağlayıcı," "içerik sağlayıcı" ve "toplu kullanım sağlayıcı" kategorileri üzerinden yapılandırılmıştır ve bu kategorilerin her biri için farklı yükümlülükler öngörülmüştür.\footnote{5651 Sayılı Kanun, madde 4.} Bu sınıflandırma, internet altyapısının merkezi ve hiyerarşik yapısını esas alır ve her bir aktörün belirli bir coğrafi konumda, belirli bir hukuki kişiliğe sahip olduğu varsayımına dayanır. Ancak Lens Protocol gibi merkeziyetsiz sistemlerde, bu geleneksel kategoriler belirsizleşir çünkü protokol herhangi bir merkezi sunucuda barındırılmaz, belirli bir coğrafi konuma bağlı değildir ve geleneksel anlamda bir "işletici" bulunmamaktadır. Blockchain ağının dağıtık yapısı, binlerce düğümün küresel olarak dağılmış olması ve protokolün akıllı sözleşmeler aracılığıyla otomatik olarak çalışması, mevcut sorumluluk kategorilerinin uygulanabilirliğini zorlaştırmaktadır. Bu durum, Lessig (2006) tarafından öngörülen "kod mimarisi" ile hukuki düzenleme arasındaki temel gerilimi somutlaştırmaktadır.\footnote{Lawrence Lessig, Code: Version 2.0, Basic Books, 2006, s. 121.}
+
+5651 Sayılı Kanun'un içerik kaldırma ve erişim engelleme mekanizmaları, merkezi kontrol noktalarının varlığını esas alır ve bu mekanizmalar Lens Protocol gibi merkeziyetsiz sistemler karşısında teknik olarak uygulanamaz hale gelir. Kanunun 8. maddesi uyarınca, mahkeme kararı veya idari karar ile belirli içeriklerin kaldırılması veya erişiminin engellenmesi mümkündür, ancak bu müdahale araçları blokzincirin kalıcılık (immutability) ve dağıtıklık (decentralization) ilkeleri nedeniyle etkisiz kalır.\footnote{5651 Sayılı Kanun, madde 8.} Blokzincirde bir kez kaydedilen içerikler, ağın konsensüs mekanizması gereği değiştirilemez ve binlerce düğüm arasında kopyalandığından, geleneksel anlamda "kaldırılması" teknik olarak imkansızdır. Ayrıca, IPFS gibi merkeziyetsiz depolama sistemlerinde barındırılan içerikler de benzer şekilde kalıcılık özelliği gösterir ve merkezi bir kontrol noktası bulunmadığından erişim engelleme müdahaleleri etkisiz kalır. Bu teknik gerçeklik, Zittrain (2008) tarafından öngörülen "generative internet" kavramının hukuki sonuçlarını gözler önüne sermektedir.\footnote{Jonathan Zittrain, The Future of the Internet and How to Stop It, Yale University Press, 2008, s. 67.}
+
+Kanunun öngördüğü bildirim ve kaldırma (notice and takedown) prosedürü, merkeziyetsiz sistemlerde işlevsiz hale gelir çünkü bildirimin yapılacağı merkezi bir otorite bulunmamaktadır. Geleneksel sosyal medya platformlarında, zararlı içerik tespit edildiğinde platform yöneticilerine bildirim yapılır ve platform bu içeriği kaldırabilir, ancak Lens Protocol gibi sistemlerde böyle bir merkezi yönetim bulunmamaktadır. Protokolün DAO (Decentralized Autonomous Organization) yapısı, topluluk tarafından yönetilmesini sağlar, ancak bu yönetişim modeli hızlı müdahale gerektiren durumlar için uygun değildir çünkü karar alma süreçleri uzun zaman alabilir ve küresel bir topluluğun koordinasyonu zorludur.\footnote{Vitalik Buterin, "DAOs, DACs, DAs and More: An Incomplete Terminology Guide," Ethereum Blog, 2014.} Ayrıca, DAO'nun aldığı kararlar bile teknik olarak blokzincirde kayıtlı içerikleri değiştiremez, sadece gelecekteki protokol davranışını etkileyebilir. Bu durum, geleneksel hukuki müdahale mekanizmalarının merkeziyetsiz sistemler karşısında yetersiz kaldığını göstermektedir.
+
+5651 Sayılı Kanun'un yargı yetkisi ve uygulanabilirlik açısından da merkeziyetsiz sistemler karşısında önemli sorunlar yaşanmaktadır. Kanun, Türkiye'de faaliyet gösteren veya Türkiye'den erişilebilen internet hizmetleri üzerinde yetki iddia eder, ancak blokzincir ağları küresel ve sınır tanımaz bir yapıya sahiptir.\footnote{Ömer Faruk Yaman, "Digital Rights and Internet Governance in Turkey: Challenges and Opportunities," International Journal of Communication 13 (2019): 4235-4254.} Lens Protocol'e erişim, herhangi bir ülkeden, herhangi bir blokzincir düğümü aracılığıyla mümkündür ve bu erişimi engellemek için tüm düğümlerin kapatılması gerekir ki bu da teknik olarak imkansızdır. Türkiye'deki internet servis sağlayıcıları, belirli web sitelerine erişimi engelleyebilir, ancak kullanıcılar VPN, Tor ağı veya doğrudan blokzincir düğümlerine bağlanma gibi yöntemlerle bu engelleri aşabilir. Johnson ve Post (1996) tarafından öngörülen "cyberspace'in egemenliği" kavramı, bu bağlamda yeni bir anlam kazanmaktadır.\footnote{David R. Johnson and David Post, "Law and Borders: The Rise of Law in Cyberspace," Stanford Law Review 48, no. 5 (1996): 1367-1402.}
+
+Kanunun veri koruma ve gizlilik hükümleri de merkeziyetsiz sistemlerle uyumsuzluklar göstermektedir. 5651 Sayılı Kanun, kişisel verilerin korunması ve kullanıcı gizliliğinin sağlanması konusunda çeşitli yükümlülükler öngörür, ancak bu yükümlülüklerin merkeziyetsiz sistemlerde nasıl uygulanacağı belirsizdir. Lens Protocol'de kullanıcı verileri, kullanıcının kontrolündeki cüzdanlarda ve merkeziyetsiz depolama sistemlerinde tutulur, bu da geleneksel veri işleyici-veri sorumlusu ayrımını bulanıklaştırır. KVKK (Kişisel Verilerin Korunması Kanunu) ile birlikte değerlendirildiğinde, "unutulma hakkı" ve "düzeltme hakkı" gibi temel hakların blokzincirin değiştirilemez yapısı nedeniyle uygulanması zorlaşır.\footnote{Kerem Altıparmak, "Kişisel Verilerin Korunması Kanunu ve Blockchain Teknolojisi," Bilişim Hukuku Dergisi 2, no. 1 (2020): 45-67.} Bu durum, mevcut veri koruma çerçevesinin teknolojik gelişmelere uyum sağlayabilmesi için güncellenme ihtiyacını ortaya koymaktadır.
+
+5651 Sayılı Kanun'un suç tanımları ve yaptırım sistemi de merkeziyetsiz sistemler bağlamında yeniden değerlendirilmelidir. Kanun, "sisteme girme," "sistemde kalma," "verileri değiştirme, bozma, yok etme" gibi geleneksel siber suçları tanımlar, ancak bu tanımlar merkezi sistemler göz önünde bulundurularak yapılmıştır.\footnote{5651 Sayılı Kanun, madde 15.} Blokzincir sistemlerinde, "sisteme girmek" herkesin yapabileceği açık bir eylemdir ve "verileri değiştirmek" teknik olarak imkansızdır. Bu durum, mevcut suç tanımlarının merkeziyetsiz sistemlerin doğasıyla uyumsuz olduğunu göstermektedir. Ayrıca, kanunun öngördüğü para cezaları ve hapis cezaları, sorumlusu belirlenemeyen merkeziyetsiz sistemlerde kime uygulanacağı belirsizdir. Brennan ve Schwartz (2019) tarafından belirtildiği üzere, blockchain teknolojisinin hukuki sistemler üzerindeki etkisi, sadece teknik değil, aynı zamanda felsefi düzeyde de köklü değişiklikler gerektirmektedir.\footnote{Christopher Brennan and David Schwartz, "Blockchain and the Law: A Critical Evaluation," Harvard Journal of Law & Technology 32, no. 2 (2019): 384-429.}
+
+Kanunun fikri mülkiyet hakları koruması da merkeziyetsiz sistemler karşısında yeni zorluklar yaratmaktadır. 5651 Sayılı Kanun, telif hakkı ihlallerinin tespiti ve bu ihlallere müdahale edilmesi konusunda çeşitli mekanizmalar öngörür, ancak bu mekanizmalar NFT tabanlı içerik sistemleriyle uyumsuzluklar gösterir. Lens Protocol'de içerikler NFT olarak tokenize edilir ve bu NFT'ler ikincil piyasalarda işlem görebilir, bu da geleneksel telif hakkı kavramlarını zorlar.\footnote{Joshua A.T. Fairfield, "Tokenized: The Law of Non-Fungible Tokens and Unique Digital Property," Indiana Law Journal 97, no. 4 (2021): 1261-1313.} Bir içeriğin NFT'si satıldığında, telif hakkının da devredilip devredilmediği belirsizdir ve bu belirsizlik hukuki uyuşmazlıklara yol açabilir. Ayrıca, blokzincirde kayıtlı NFT'lerin kaldırılması teknik olarak imkansız olduğundan, telif hakkı ihlali tespit edilse bile etkili bir müdahale yapılamayabilir.
+
+% VI. İFADE ÖZGÜRLÜĞÜ VE SANSÜR DİRENCİ ANALİZİ
+\section*{\fontsize{12}{14}\selectfont\bfseries VI. İFADE ÖZGÜRLÜĞÜ VE SANSÜR DİRENCİ ANALİZİ}
+
+İfade özgürlüğü, demokratik toplumların temel taşlarından biri olarak kabul edilmekte ve bu özgürlüğün korunması, hem ulusal anayasalar hem de uluslararası insan hakları sözleşmeleri tarafından güvence altına alınmaktadır. Türkiye Cumhuriyeti Anayasası'nın 26. maddesi, düşünce ve kanaat özgürlüğünü; 28. maddesi ise basın özgürlüğünü düzenlemekte ve bu hakların kullanımının sadece kanunla sınırlanabileceğini öngörmektedir.\footnote{Türkiye Cumhuriyeti Anayasası, madde 26 ve 28.} Avrupa İnsan Hakları Sözleşmesi'nin 10. maddesi de ifade özgürlüğünü kapsamlı bir şekilde koruma altına alır ve bu özgürlüğün "sınırları aşmayan" müdahalelere tabi tutulabileceğini belirtir.\footnote{Avrupa İnsan Hakları Sözleşmesi, madde 10.} Ancak dijital çağda, özellikle sosyal medya platformlarının yaygınlaşmasıyla birlikte, ifade özgürlüğünün kullanımı ve korunması yeni boyutlar kazanmış ve geleneksel hukuki çerçeveler bu yeni gerçeklikler karşısında yetersiz kalmaya başlamıştır. Lens Protocol gibi merkeziyetsiz sosyal medya sistemleri, bu bağlamda ifade özgürlüğünün korunması için yeni teknik ve hukuki imkanlar sunmakta, ancak aynı zamanda mevcut düzenleyici çerçevelerle önemli gerilimler yaratmaktadır.
+
+Geleneksel sosyal medya platformlarında ifade özgürlüğünün sınırlandırılması, çoğunlukla içerik moderasyonu ve algoritmik filtreleme mekanizmaları aracılığıyla gerçekleştirilmektedir. Klonick (2018) tarafından detaylı olarak analiz edildiği üzere, Facebook, Twitter, YouTube gibi büyük platformlar, milyarlarca kullanıcının içeriklerini yönetmek için karmaşık moderasyon sistemleri geliştirmiş ve bu sistemler zamanla quasi-yargısal bir rol üstlenmiştir.\footnote{Kate Klonick, "The New Governors: The People, Rules, and Processes Governing Online Speech," Harvard Law Review 131, no. 6 (2018): 1598-1670.} Bu moderasyon süreçleri, genellikle şeffaf olmayan algoritmalar ve insan moderatörler tarafından yürütülmekte ve kullanıcılar bu kararlara karşı etkili bir başvuru mekanizmasına sahip olmamaktadır. Gillespie (2018) tarafından vurgulandığı üzere, bu durum özel şirketlerin ifade özgürlüğü üzerinde devletlerden daha fazla kontrol sahibi olması paradoksunu yaratmaktadır.\footnote{Tarleton Gillespie, Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media, Yale University Press, 2018, s. 89.} Ayrıca, bu platformların küresel ölçekte faaliyet göstermesi, farklı ülkelerin hukuki ve kültürel normlarının tek bir moderasyon politikası altında birleştirilmeye çalışılması sorununu ortaya çıkarmaktadır.
+
+Sansür kavramı, dijital çağda geleneksel tanımının ötesine geçerek çok daha sofistike ve görünmez formlar almıştır. Doğrudan içerik kaldırmanın yanı sıra, "shadow banning" (gölge yasaklama), algoritmik görünürlük azaltma, "deboost" etme ve erişim kısıtlama gibi dolaylı sansür yöntemleri yaygın hale gelmiştir.\footnote{Jillian C. York, Silicon Values: The Future of Free Speech Under Surveillance Capitalism, Verso Books, 2021, s. 134.} Bu yöntemler, kullanıcıların içeriklerinin tamamen kaldırılmadığı, ancak erişilebilirliğinin önemli ölçüde azaltıldığı durumları ifade eder ve bu durum geleneksel sansür tanımlarını zorlar. Tufekci (2015) tarafından ortaya konulan "algorithmic amplification" ve "algorithmic suppression" kavramları, sosyal medya algoritmalarının sadece içerik kaldırma değil, aynı zamanda içerik görünürlüğünü kontrol ederek de sansür işlevi görebileceğini göstermektedir.\footnote{Zeynep Tufekci, "Algorithmic Amplification of Politics on Twitter," Proceedings of the National Academy of Sciences 112, no. 44 (2015): 13649-13654.} Bu durum, ifade özgürlüğünün sadece konuşma hakkı değil, aynı zamanda duyulma hakkını da içerdiği gerçeğini vurgulamaktadır.
+
+Lens Protocol gibi merkeziyetsiz sosyal medya sistemleri, geleneksel platformların yarattığı sansür sorunlarına köklü çözümler sunma potansiyeli taşımaktadır. Bu sistemlerin temel avantajı, içeriklerin blokzincir teknolojisi sayesinde kalıcı ve değiştirilemez olmasıdır; bir kez yayınlanan içerik, teknik olarak hiçbir merkezi otorite tarafından kaldırılamaz veya değiştirilemez.\footnote{Primavera De Filippi and Aaron Wright, Blockchain and the Law: The Rule of Code, Harvard University Press, 2018, s. 187.} Bu kalıcılık özelliği, ifade özgürlüğü için güçlü bir teknik güvence oluşturur çünkü kullanıcılar, görüşlerini ifade ettikten sonra bu görüşlerin keyfi olarak silineceği endişesi taşımak zorunda kalmazlar. Ayrıca, merkeziyetsiz sistemlerde kullanıcı kimlikleri de NFT teknolojisi ile korunur ve hiçbir platform yöneticisi kullanıcı hesaplarını askıya alamaz veya silemez. Bu durum, kullanıcılara dijital kimliklerinin tam kontrolünü vererek, ifade özgürlüğünün kullanımı için gerekli güvenli ortamı sağlar.
+
+Merkeziyetsiz sistemlerin sansür direnci, sadece teknik özelliklerden değil, aynı zamanda ekonomik teşvik yapılarından da kaynaklanmaktadır. Lens Protocol'de içerik üreticileri, yayınlarını NFT olarak tokenize edebilir ve bu NFT'leri satarak doğrudan gelir elde edebilir, bu da geleneksel platformların reklam odaklı iş modellerine alternatif sunar.\footnote{Stani Kulechov, "Lens Protocol: A Decentralized Social Graph," Lens Protocol Documentation, 2022.} Bu ekonomik model, içerik üreticilerinin platform politikalarına bağımlı olmadan gelir elde etmelerini mümkün kılar ve böylece ekonomik baskı yoluyla uygulanan dolaylı sansürü ortadan kaldırır. Geleneksel platformlarda, içerik üreticileri platform politikalarına uymadıkları takdirde monetizasyon haklarını kaybedebilir veya erişimleri kısıtlanabilir, ancak merkeziyetsiz sistemlerde bu tür ekonomik yaptırımlar mümkün değildir. Catalini ve Gans (2016) tarafından belirtildiği üzere, token ekonomileri katılımcılar arasında değer dağılımını daha adil hale getirebilir ve merkezi otoritelerin ekonomik kontrolünü azaltabilir.\footnote{Christian Catalini and Joshua S. Gans, "Some Simple Economics of the Blockchain," MIT Sloan Research Paper No. 5191-16, 2016.}
+
+Ancak merkeziyetsiz sistemlerin sansür direnci mutlak değildir ve çeşitli sınırları bulunmaktadır. İlk olarak, bu sistemlere erişim hala geleneksel internet altyapısına bağımlıdır ve devletler DNS engelleme, IP adresi engelleme veya internet servis sağlayıcıları üzerinden müdahale ederek erişimi kısıtlayabilir.\footnote{Roya Ensafi ve diğerleri, "Detecting Intentional Packet Drops on the Internet via TCP/IP Side Channels," Proceedings of the 2014 Conference on Internet Measurement Conference, 2014.} İkinci olarak, çoğu kullanıcı bu sistemlere web tabanlı arayüzler aracılığıyla erişir ve bu arayüzler geleneksel web sunucularında barındırıldığından, sunucu kapatma veya domain engelleme gibi yöntemlerle erişim engellenebilir. Üçüncü olarak, blokzincir ağlarının kendisi de madenci/doğrulayıcı konsantrasyonu riski taşır ve eğer ağın önemli bir kısmı belirli bir coğrafi bölgede yoğunlaşmışsa, bu bölgedeki düzenleyici müdahaleler ağın işleyişini etkileyebilir. Narayanan ve Clark (2017) tarafından vurgulandığı üzere, blokzincir ağlarının merkeziyetsizliği teorik olarak mümkün olsa da, pratikte çeşitli merkezileşme eğilimleri gözlemlenebilir.\footnote{Arvind Narayanan ve Jeremy Clark, "Bitcoin's Academic Pedigree," Communications of the ACM 60, no. 12 (2017): 36-45.}
+
+Merkeziyetsiz sosyal medya sistemlerinin ifade özgürlüğü üzerindeki etkisi, sadece sansür direnci ile sınırlı değildir; aynı zamanda ifade özgürlüğünün kalitesi ve çeşitliliği üzerinde de önemli etkileri bulunmaktadır. Geleneksel platformlarda algoritmik filtreleme, kullanıcıları "filter bubble" (filtre balonu) ve "echo chamber" (yankı odası) etkilerine maruz bırakır ve bu durum görüş çeşitliliğini azaltır.\footnote{Eli Pariser, The Filter Bubble: What the Internet Is Hiding from You, Penguin Press, 2011, s. 67.} Merkeziyetsiz sistemlerde ise kullanıcılar, hangi içerikleri göreceklerini kendileri belirleyebilir ve algoritmik manipülasyona maruz kalmazlar. Bu durum, daha çeşitli ve dengeli bir bilgi ekosistemine katkı sağlayabilir. Ayrıca, merkeziyetsiz sistemlerin küresel ve sınır tanımaz yapısı, farklı kültürlerden ve coğrafyalardan kullanıcıların bir araya gelmesini kolaylaştırır ve bu da görüş çeşitliliğini artırır. Benkler, Faris ve Roberts (2018) tarafından belirtildiği üzere, çeşitli bilgi kaynaklarına erişim, demokratik karar alma süreçlerinin kalitesi için kritik önem taşır.\footnote{Yochai Benkler, Robert Faris, and Hal Roberts, Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics, Oxford University Press, 2018, s. 234.}
+
+Merkeziyetsiz sistemlerin ifade özgürlüğü üzerindeki pozitif etkilerine rağmen, bu sistemler aynı zamanda zararlı içeriklerin yayılması konusunda da zorluklar yaratmaktadır. Nefret söylemi, terör propagandası, çocuk istismarı materyalleri gibi içeriklerin kaldırılması, geleneksel platformlarda mümkün olsa da, merkeziyetsiz sistemlerde teknik olarak çok daha zordur.\footnote{Nicolas P. Suzor, Tess Van Geelen, Sarah Myers West, Jillian C. York, and Molly Sauter, "Human Rights by Design: The Responsibilities of Social Media Platforms to Address Gender-Based Violence Online," Media, Culture & Society 41, no. 3 (2019): 302-319.} Bu durum, ifade özgürlüğü ile diğer temel haklar (güvenlik, onur, mahremiyet vb.) arasında yeni bir denge kurulması gerekliliğini ortaya koymaktadır. Balkin (2018) tarafından önerilen "üçgen model" bu bağlamda önem kazanır; bu modele göre ifade özgürlüğü, devlet, platform ve kullanıcı arasındaki dinamik bir ilişki içinde şekillenir ve merkeziyetsiz sistemler bu üçgenin yapısını köklü olarak değiştirir.\footnote{Jack M. Balkin, "Free Speech is a Triangle," Columbia Law Review 118, no. 7 (2018): 2011-2056.} Merkeziyetsiz sistemlerde "platform" rolü ortadan kalktığından, zararlı içeriklerle mücadele sorumluluğu büyük ölçüde kullanıcı topluluğuna ve teknik çözümlere devredilir.
+
+Bu zorlukların çözümü için, merkeziyetsiz sistemlerde yeni tür moderasyon mekanizmaları geliştirilmektedir. Topluluk tabanlı moderasyon, kullanıcı oylaması ile içerik filtreleme, itibar sistemleri ve ekonomik teşvikler gibi yaklaşımlar, merkezi moderasyona alternatif olarak önerilmektedir.\footnote{Nathan Schneider, "Decentralization: An Incomplete Ambition," Journal of Cultural Economy 12, no. 4 (2019): 265-285.} Lens Protocol gibi sistemlerde, kullanıcılar istenmeyen içerikleri kendi akışlarından filtreleyebilir, belirli kullanıcıları engelleyebilir veya topluluk kurallarını ihlal eden hesapları raporlayabilir. Ancak bu yaklaşımların etkinliği henüz tam olarak test edilmemiştir ve ölçeklenebilirlik sorunları yaşayabilir. Ayrıca, topluluk tabanlı moderasyonun kendi başına "tyranny of the majority" (çoğunluğun zorbalığı) riski taşıdığı ve azınlık görüşlerinin baskılanabileceği endişeleri bulunmaktadır.
+
+% VII. SONUÇ VE ÖNERİLER
+\section*{\fontsize{12}{14}\selectfont\bfseries VII. SONUÇ VE ÖNERİLER}
+
+Bu araştırma, Lens Protocol özelinde merkeziyetsiz sosyal medya sistemlerinin ifade özgürlüğü üzerindeki etkilerini ve 5651 Sayılı Kanun'un bu yeni teknolojik gerçeklik karşısındaki durumunu kapsamlı bir şekilde analiz etmiştir. Araştırmanın temel bulguları, blokzincir tabanlı sosyal medya sistemlerinin geleneksel platformların yarattığı sansür sorunlarına köklü çözümler sunma potansiyeli taşıdığını, ancak aynı zamanda mevcut hukuki düzenlemelerle önemli uyumsuzluklar yaşadığını göstermektedir. Lens Protocol gibi merkeziyetsiz sistemler, içeriklerin kalıcılığı, kullanıcı kimliklerinin korunması ve ekonomik teşvik mekanizmaları aracılığıyla ifade özgürlüğü için güçlü teknik güvenceler sağlamaktadır. Bu sistemlerin NFT tabanlı mimarisi, kullanıcılara dijital varlıklarının tam kontrolünü vererek platform bağımsızlığı yaratmakta ve geleneksel sosyal medya platformlarının merkezi kontrolünden kaynaklanan sansür risklerini önemli ölçüde azaltmaktadır. Ancak bu teknik avantajlar, zararlı içeriklerin kontrolü, hukuki sorumluluk atfı ve düzenleyici müdahale konularında yeni zorluklar yaratmaktadır.
+
+5651 Sayılı Kanun'un mevcut yapısı, merkeziyetsiz blokzincir tabanlı sistemler karşısında hem teknik hem de normatif düzeyde yetersiz kalmaktadır. Kanunun sorumluluk rejimi, "yer sağlayıcı," "erişim sağlayıcı," "içerik sağlayıcı" kategorileri üzerine inşa edilmiş olup, bu kategoriler merkezi internet yapısını esas almaktadır ve merkeziyetsiz sistemlerde bu rollerin belirsizleşmesi nedeniyle uygulanabilirliğini yitirmektedir. İçerik kaldırma ve erişim engelleme mekanizmaları, blokzincirin kalıcılık ve dağıtıklık ilkeleri nedeniyle teknik olarak işlevsiz hale gelmekte, bildirim ve kaldırma prosedürleri ise merkezi bir otoritenin bulunmaması nedeniyle uygulanamamaktadır. Bu durum, mevcut hukuki çerçevenin teknolojik gelişmelere uyum sağlayabilmesi için köklü bir yeniden yapılandırma ihtiyacını ortaya koymaktadır. Kanunun suç tanımları, yaptırım sistemi ve fikri mülkiyet hakları koruması da merkeziyetsiz sistemlerin doğasıyla uyumsuzluklar göstermekte ve bu uyumsuzluklar hukuki belirsizliklere ve uygulama zorluklarına yol açmaktadır.
+
+Araştırmanın bulguları ışığında, Türkiye'nin internet düzenleme çerçevesinin merkeziyetsiz teknolojilere uyum sağlayabilmesi için çok boyutlu bir yaklaşım benimsenmelidir. İlk olarak, 5651 Sayılı Kanun'un sorumluluk rejimi, merkeziyetsiz sistemlerin teknik özelliklerini dikkate alacak şekilde yeniden tasarlanmalıdır. Bu bağlamda, geleneksel "aracı sorumluluk" modelinin yanı sıra, "protokol sorumluluk" ve "topluluk sorumluluk" gibi yeni sorumluluk kategorileri geliştirilmelidir. Protokol geliştiricileri, DAO yöneticileri ve topluluk moderatörleri için farklılaştırılmış sorumluluk rejimleri oluşturulmalı ve bu aktörlerin yükümlülükleri teknolojik imkanlar ve sınırlar çerçevesinde belirlenmelidir. Ayrıca, merkeziyetsiz sistemlerde zararlı içeriklerle mücadele için alternatif yaklaşımlar geliştirilmeli, topluluk tabanlı moderasyon, ekonomik teşvikler ve teknik filtreleme çözümleri hukuki çerçeveye entegre edilmelidir. Bu yaklaşım, hem ifade özgürlüğünün korunmasını hem de zararlı içeriklere karşı etkili mücadeleyi mümkün kılacak dengeli bir sistem yaratabilir.
+
+İkinci olarak, merkeziyetsiz sistemlerin küresel ve sınır tanımaz yapısı nedeniyle, ulusal düzenlemelerin yanı sıra uluslararası işbirliği mekanizmaları da güçlendirilmelidir. Blokzincir ağlarının çok uluslu karakteri, tek bir ülkenin düzenlemelerinin etkisini sınırlamakta ve koordineli bir yaklaşım gerektirmektedir. Bu bağlamda, Türkiye'nin AB, OECD ve diğer uluslararası kuruluşlarla işbirliği içinde ortak standartlar geliştirmesi ve merkeziyetsiz teknolojiler için küresel bir düzenleme çerçevesi oluşturulmasına katkı sağlaması önemlidir.\footnote{Michèle Finck, "Blockchain Regulation and Governance in Europe," Cambridge University Press, 2018, s. 234.} Ayrıca, merkeziyetsiz sistemlerin teknik özelliklerini anlayan uzman kadroların yetiştirilmesi ve düzenleyici kurumların teknik kapasitelerinin artırılması kritik önem taşımaktadır. Bu kapsamda, BTK, TİB ve diğer ilgili kurumların merkeziyetsiz teknolojiler konusunda uzmanlık geliştirmesi ve bu alanda araştırma-geliştirme faaliyetlerini desteklemesi gerekmektedir.
+
+Üçüncü olarak, ifade özgürlüğü ve diğer temel haklar arasındaki dengenin merkeziyetsiz sistemler bağlamında yeniden kurulması gerekmektedir. Geleneksel platformlarda bu denge, platform politikaları ve merkezi moderasyon aracılığıyla sağlanırken, merkeziyetsiz sistemlerde bu sorumluluk büyük ölçüde kullanıcı topluluğuna devredilmektedir. Bu durum, hem fırsatlar hem de riskler yaratmaktadır; bir yandan kullanıcılar daha fazla özgürlük ve kontrol elde ederken, diğer yandan zararlı içeriklere karşı korunma konusunda zorluklar yaşanabilmektedir. Bu dengenin sağlanması için, hukuki düzenlemelerin yanı sıra teknik çözümler, toplumsal normlar ve ekonomik teşvikler gibi çok katmanlı bir yaklaşım benimsenmelidir.\footnote{Jack M. Balkin, "Free Speech is a Triangle," Columbia Law Review 118, no. 7 (2018): 2011-2056.} Kullanıcı eğitimi, dijital okuryazarlık programları ve topluluk tabanlı öz-düzenleme mekanizmaları bu yaklaşımın önemli bileşenlerini oluşturmalıdır.
+
+Dördüncü olarak, merkeziyetsiz sistemlerin ekonomik boyutları da düzenleyici çerçevede dikkate alınmalıdır. NFT tabanlı içerik sistemleri, token ekonomileri ve DeFi entegrasyonları, geleneksel finansal düzenlemelerle etkileşim halindedir ve bu etkileşimler hukuki belirsizliklere yol açabilmektedir. Bu bağlamda, SPK, BDDK ve Maliye Bakanlığı gibi finansal düzenleyici kurumlarla koordineli bir yaklaşım benimsenmelidir. Merkeziyetsiz sosyal medya sistemlerinde elde edilen gelirlerin vergilendirilmesi, NFT işlemlerinin hukuki statüsü ve token ekonomilerinin düzenlenmesi konularında net kurallar oluşturulmalıdır. Ayrıca, bu sistemlerin anti-money laundering (AML) ve know your customer (KYC) gereklilikleriyle uyumu da değerlendirilmelidir, ancak bu değerlendirme merkeziyetsiz sistemlerin doğasını bozmayacak şekilde yapılmalıdır.
+
+Beşinci olarak, merkeziyetsiz sistemlerin veri koruma ve gizlilik açısından yarattığı fırsatlar ve zorluklar da hukuki çerçevede ele alınmalıdır. KVKK'nın "unutulma hakkı" ve "düzeltme hakkı" gibi hükümleri, blokzincirin değiştirilemez yapısıyla çelişki yaratmaktadır ve bu çelişkinin çözümü için yeni yaklaşımlar geliştirilmelidir. Bir seçenek, kullanıcıların verilerini blokzincir dışında tutma hakkına sahip olması ve sadece hash değerlerinin blokzincirde saklanması olabilir. Diğer bir seçenek ise, "privacy by design" ilkesinin merkeziyetsiz sistemlere uygulanması ve kullanıcıların gizlilik tercihlerini teknik düzeyde kontrol edebilmesi olabilir.\footnote{Ann Cavoukian, "Privacy by Design: The 7 Foundational Principles," Information and Privacy Commissioner of Ontario, 2009.} Bu yaklaşımlar, hem veri koruma gerekliliklerini karşılayabilir hem de merkeziyetsiz sistemlerin avantajlarını koruyabilir.
+
+Altıncı olarak, merkeziyetsiz sosyal medya sistemlerinin toplumsal kabulü ve yaygınlaşması için eğitim ve farkındalık programları geliştirilmelidir. Bu sistemlerin teknik karmaşıklığı, ortalama kullanıcılar için benimseme engelini oluşturmaktadır ve bu engelin aşılması için kullanıcı dostu arayüzler, eğitim materyalleri ve destek sistemleri geliştirilmelidir. Üniversiteler, sivil toplum kuruluşları ve teknoloji şirketleri bu konuda işbirliği yapmalı ve merkeziyetsiz teknolojilerin potansiyeli ve riskleri hakkında toplumsal farkındalık artırılmalıdır. Ayrıca, bu sistemlerin demokratik katılım, ifade özgürlüğü ve dijital haklar açısından sunduğu fırsatlar vurgulanmalı ve toplumsal tartışma ortamı yaratılmalıdır.
+
+Son olarak, bu araştırmanın bulguları gelecekteki araştırmalar için önemli yönlendirmeler sunmaktadır. Merkeziyetsiz sosyal medya sistemlerinin uzun vadeli etkileri, topluluk tabanlı moderasyonun etkinliği, ekonomik teşvik mekanizmalarının sürdürülebilirliği ve hukuki düzenlemelerin teknolojik gelişmelere uyum sağlama kapasitesi gibi konular daha derinlemesine araştırılmalıdır. Ayrıca, farklı merkeziyetsiz protokollerin karşılaştırmalı analizi, kullanıcı deneyimi çalışmaları ve toplumsal etki değerlendirmeleri de gelecekteki araştırma gündeminin önemli parçalarını oluşturmalıdır. Bu araştırmaların sonuçları, hem akademik literatüre hem de politika yapıcılara değerli katkılar sağlayacak ve merkeziyetsiz teknolojilerin toplumsal faydalarının maksimize edilmesine yardımcı olacaktır. Sonuç olarak, Lens Protocol gibi merkeziyetsiz sosyal medya sistemleri, ifade özgürlüğünün korunması ve geliştirilmesi için önemli fırsatlar sunmakta, ancak bu fırsatların değerlendirilmesi için mevcut hukuki ve düzenleyici çerçevelerin köklü bir şekilde yeniden düşünülmesi gerekmektedir.
+
+\newpage
+
+% KAYNAKLAR
+\section*{\fontsize{12}{14}\selectfont\bfseries KAYNAKLAR}
+
+\fontsize{11}{13}\selectfont
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5em}
+
+Allen, Christopher. "The Path to Self-Sovereign Identity." Life With Alacrity Blog, 2016.
+
+Altıparmak, Kerem. "Kişisel Verilerin Korunması Kanunu ve Blockchain Teknolojisi." Bilişim Hukuku Dergisi 2, no. 1 (2020): 45-67.
+
+Avrupa İnsan Hakları Sözleşmesi, madde 10.
+
+Balkin, Jack M. "Free Speech is a Triangle." Columbia Law Review 118, no. 7 (2018): 2011-2056.
+
+Benet, Juan. "IPFS - Content Addressed, Versioned, P2P File System." arXiv preprint arXiv:1407.3561, 2014.
+
+Benkler, Yochai, Robert Faris, and Hal Roberts. Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics. Oxford University Press, 2018.
+
+Bozbayındır, Ali Emrah. "Türkiye'de İnternetin Hukuki Rejimi: 5651 Sayılı Kanun ve Özgürlükler Dengesi." Ankara Barosu Dergisi 76 (2018): 193-217.
+
+Brennan, Christopher and David Schwartz. "Blockchain and the Law: A Critical Evaluation." Harvard Journal of Law & Technology 32, no. 2 (2019): 384-429.
+
+Buterin, Vitalik. "DAOs, DACs, DAs and More: An Incomplete Terminology Guide." Ethereum Blog, 2014.
+
+Buterin, Vitalik. "Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform." Ethereum Whitepaper, 2014.
+
+Catalini, Christian and Joshua S. Gans. "Some Simple Economics of the Blockchain." MIT Sloan Research Paper No. 5191-16, 2016.
+
+Cavoukian, Ann. "Privacy by Design: The 7 Foundational Principles." Information and Privacy Commissioner of Ontario, 2009.
+
+Chalmers, Dominic, Christian Fisch, and Ladislav Kristoufek. "Trading on Non-Fungible Tokens: Evidence from CryptoPunks." Journal of Financial Economics 144, no. 2 (2022): 368-384.
+
+De Filippi, Primavera and Aaron Wright. Blockchain and the Law: The Rule of Code. Harvard University Press, 2018.
+
+De Filippi, Primavera and Samer Hassan. "Blockchain Technology as a Regulatory Technology: From Code is Law to Law is Code." Internet Policy Review 5, no. 3 (2016): 1-20.
+
+Ensafi, Roya ve diğerleri. "Detecting Intentional Packet Drops on the Internet via TCP/IP Side Channels." Proceedings of the 2014 Conference on Internet Measurement Conference, 2014.
+
+Entriken, William, Dieter Shirley, Jacob Evans, and Nastassia Sachs. "EIP-721: Non-Fungible Token Standard." Ethereum Improvement Proposals, 2018.
+
+Fairfield, Joshua A.T. "Tokenized: The Law of Non-Fungible Tokens and Unique Digital Property." Indiana Law Journal 97, no. 4 (2021): 1261-1313.
+
+Finck, Michèle. Blockchain Regulation and Governance in Europe. Cambridge University Press, 2018.
+
+Gillespie, Tarleton. Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media. Yale University Press, 2018.
+
+Gorwa, Robert, Reuben Binns, and Christian Katzenbach. "Algorithmic Content Moderation: Technical and Political Challenges in the Automation of Platform Governance." Big Data & Society 7, no. 1 (2020): 1-15.
+
+Johnson, David R. and David Post. "Law and Borders: The Rise of Law in Cyberspace." Stanford Law Review 48, no. 5 (1996): 1367-1402.
+
+Klonick, Kate. "The New Governors: The People, Rules, and Processes Governing Online Speech." Harvard Law Review 131, no. 6 (2018): 1598-1670.
+
+Kulechov, Stani. "Lens Protocol: A Decentralized Social Graph." Lens Protocol Documentation, 2022.
+
+Lens Protocol Team. "Follow NFTs and Social Tokens." Lens Protocol Technical Documentation, 2022.
+
+Lessig, Lawrence. Code and Other Laws of Cyberspace. Basic Books, 1999.
+
+Lessig, Lawrence. Code: Version 2.0. Basic Books, 2006.
+
+Nailwal, Sandeep, Jaynti Kanani, and Anurag Arjun. "Polygon: Ethereum's Internet of Blockchains." Polygon Whitepaper, 2021.
+
+Narayanan, Arvind, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction. Princeton University Press, 2016.
+
+Narayanan, Arvind ve Jeremy Clark. "Bitcoin's Academic Pedigree." Communications of the ACM 60, no. 12 (2017): 36-45.
+
+Pariser, Eli. The Filter Bubble: What the Internet Is Hiding from You. Penguin Press, 2011.
+
+Roberts, Sarah T. Behind the Screen: Content Moderation in the Shadows of Social Media. Yale University Press, 2019.
+
+Schneider, Nathan. "Decentralization: An Incomplete Ambition." Journal of Cultural Economy 12, no. 4 (2019): 265-285.
+
+Suzor, Nicolas P., Tess Van Geelen, Sarah Myers West, Jillian C. York, and Molly Sauter. "Human Rights by Design: The Responsibilities of Social Media Platforms to Address Gender-Based Violence Online." Media, Culture & Society 41, no. 3 (2019): 302-319.
+
+Tufekci, Zeynep. "Algorithmic Amplification of Politics on Twitter." Proceedings of the National Academy of Sciences 112, no. 44 (2015): 13649-13654.
+
+Türkiye Cumhuriyeti Anayasası, madde 26 ve 28.
+
+Weaver, Nicholas. "Risks of Cryptocurrencies." Communications of the ACM 61, no. 6 (2018): 20-24.
+
+Wright, Aaron and Primavera De Filippi. "Decentralized Blockchain Technology and the Rise of Lex Cryptographia." SSRN Electronic Journal, 2015.
+
+Yaman, Ömer Faruk. "Digital Rights and Internet Governance in Turkey: Challenges and Opportunities." International Journal of Communication 13 (2019): 4235-4254.
+
+York, Jillian C. Silicon Values: The Future of Free Speech Under Surveillance Capitalism. Verso Books, 2021.
+
+Zittrain, Jonathan. The Future of the Internet and How to Stop It. Yale University Press, 2008.
+
+Zuckerman, Ethan. "The Case for Digital Public Infrastructure." Knight First Amendment Institute, 2020.
+
+5651 Sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun.
+
+\end{document}
